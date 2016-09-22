@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="easy-autocomplete/easy-autocomplete.css">
+    <link rel="stylesheet" href="easy-autocomplete/easy-autocomplete.themes.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="hidden-sm-down col-md-4 col-lg-4">
+        <a class="navbar-brand" href="#">Bootstrap cheatsheet</a>
+    </div>
+    <div class="col-xs-10 col-sm-11 col-md-4 col-lg-4">
+        <input type="text" class="form-control filter__search" id="quicksearch" placeholder="Start your search here...">
+    </div>
+    <div class="col-xs-2 col-sm-1 col-md-4 col-lg-4">
+        <button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#bsc-options" aria-controls="bsc-options" aria-expanded="false" aria-label="Toggle navigation">
+            &#9776;
+        </button>
+    </div>
+</nav>
+<div class="collapse navbar-toggleable-lg filter-options" id="bsc-options">
+    <div id="filters" class="button-group">
+        <a href="#"  class="button active" data-filter="*">All</a>
+        <a href="#"  class="button" data-filter=".alerts">Alerts</a>
+        <a href="#"  class="button" data-filter=".breadcrumb">Breadcrumb</a>
+        <a href="#"  class="button" data-filter=".buttons">Buttons</a>
+        <a href="#"  class="button" data-filter=".button-groups">Button groups</a>
+        <a href="#"  class="button" data-filter=".button-modifiers">Button modifiers</a>
+        <a href="#"  class="button" data-filter=".cards">Cards</a>
+        <a href="#"  class="button" data-filter=".carousel">Carousel</a>
+        <a href="#"  class="button" data-filter=".collapse">Collapse</a>
+        <a href="#"  class="button" data-filter=".dropdowns">Dropdowns</a>
+        <a href="#"  class="button" data-filter=".forms">Forms</a>
+        <a href="#"  class="button" data-filter=".form-modifiers">Form modifiers</a>
+        <a href="#"  class="button" data-filter=".form-input-groups">Form input groups</a>
+        <a href="#"  class="button" data-filter=".custom-forms">Custom forms</a>
+        <a href="#"  class="button" data-filter=".grid">Grid</a>
+        <a href="#"  class="button" data-filter=".images">Images</a>
+        <a href="#"  class="button" data-filter=".jumbotron">Jumbotron</a>
+        <a href="#"  class="button" data-filter=".list-group">List group</a>
+        <a href="#"  class="button" data-filter=".media-objects">Media objects</a>
+        <a href="#"  class="button" data-filter=".modal">Modal</a>
+        <a href="#"  class="button" data-filter=".navs">Navs</a>
+        <a href="#"  class="button" data-filter=".navbar">Navbar</a>
+        <a href="#"  class="button" data-filter=".pagination">Pagination</a>
+        <a href="#"  class="button" data-filter=".popover">Popover</a>
+        <a href="#"  class="button" data-filter=".responsive-utilities">Responsive utilities</a>
+        <a href="#"  class="button" data-filter=".scrollspy">Scrollspy</a>
+        <a href="#"  class="button" data-filter=".tables">Tables</a>
+        <a href="#"  class="button" data-filter=".tags">Tags</a>
+        <a href="#"  class="button" data-filter=".tooltips">Tooltips</a>
+        <a href="#"  class="button" data-filter=".typography">Typography</a>
+        <a href="#"  class="button" data-filter=".utility-classes">Utility classes</a>
+    </div>
+</div>
+
+<div class="container-fluid no-gutter bsc-content">
+
+
+    <div id="portfolio-grid" class="grid list-group">
+        <!--<div class="col-sm-3">
+            <div class="element-item list-group-item alerts" data-category="alerts">
+                <h3 class="name">alert-success</h3>
+            </div>
+            <div class="element-item list-group-item alerts" data-category="alerts">
+                <h3 class="name">alert-info</h3>
+            </div>
+            <div class="element-item list-group-item alerts " data-category="alerts">
+                <h3 class="name">alert-warnings</h3>
+            </div>
+            <div class="element-item list-group-item alerts" data-category="alerts">
+                <h3 class="name">alert-danger</h3>
+            </div>
+        </div>-->
+
+    </div>
+
+
+</div><!-- /.container -->
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">           
+        </div>		
+    </div>
+</div>
+
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+<script src="easy-autocomplete/jquery.easy-autocomplete.min.js"></script>
+<script>
+
+
+
+
+    var options = {
+        url: "data/autocomplete.js",
+        list: {
+            showAnimation: {
+                type: "slide", //normal|slide|fade
+                time: 200,
+                callback: function() {}
+            },
+            hideAnimation: {
+                type: "slide", //normal|slide|fade
+                time: 200,
+                callback: function() {}
+            },
+            match: {
+                enabled: true
+            },
+            onKeyEnterEvent: function() {
+                //alert("Click !");
+                $(".easy-autocomplete-container ul").hide();
+            }
+        }
+    };
+
+    $(".filter__search").easyAutocomplete(options);
+    // Add your javascript here
+    $(function () {
+
+        var max = 50,
+                min = 0,
+                news,
+                $content = $('#portfolio-grid');
+
+        grabNews();
+
+
+        function showNews(){
+            if (!news) return;
+            var items = [];
+
+            for (i = 0; i < news.length; i++) {
+                var item;
+                if (!news[i]) return; // reached the end of the json news
+
+                /*if (news[i].index % 7 == 0) {
+                    item = $('<div class="tile x300x300"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
+                } else if (news[i].index % 5 == 0) {
+                    item = $('<div class="tile x300x200"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
+                } else if (news[i].index % 4 == 0) {
+                    item = $('<div class="tile x200x200"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
+                } else {
+                    item = $('<div class="tile x150x100"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
+                }*/
+
+
+
+
+                  item = $('<div class="element-item list-group-item ' + news[i].category + '">' +
+                           '<div class="bsc-card">' +
+                           '<div class="face front">' +
+                           '<span class="name">' + news[i].name + '</span>' +
+                           '<span class="category">' + news[i].category + '</span>' +
+                           '</div>' +
+                           '<div class="face back"><a href="#one" class="back-link one">one</a><a href="#two" class="back-link two">two</a></div>' +
+                           '</div>' +
+                           '</div>');
+
+                items.push( item.get(0) );
+            }
+
+            $content.append( items ).isotope('appended', items );
+
+
+
+
+
+
+
+
+
+            // bind filter button click
+            $('#filters').on( 'click', 'a', function() {
+                var filterValue = $( this ).attr('data-filter');
+
+                $content.isotope({ filter: filterValue });
+            });
+            // change is-checked class on buttons
+            $('.button-group').each( function( i, buttonGroup ) {
+                var $buttonGroup = $( buttonGroup );
+                $buttonGroup.on( 'click', 'a', function() {
+                    $buttonGroup.find('.active').removeClass('active');
+                    $( this ).addClass('active');
+                });
+            });
+
+
+
+
+
+            max += 50;
+            min += 50;
+        };
+
+
+
+        function grabNews() {
+            $.ajax({
+                type : 'GET',
+                url : 'data/data.json',
+                cache: false,
+                success : function (data) {
+                    news = data;
+                },
+                error : function () {
+                    console.log('Loading Failed...');
+                }
+            }).then( function(){
+                // initialize the isotope plugin - will run only once
+                $content.isotope({
+                    itemSelector: '.element-item',
+                    layoutMode: 'fitRows',
+                    /*masonry: {
+                        columnWidth: 50
+                    }*/
+                });
+
+                // bind the scroll handler here so we do not run it before the ajax is complete
+                /*$(window).scroll(function () {
+
+                    if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+                        showNews();
+                    }
+                });*/
+
+                // execute for the first time the shownews
+                showNews();
+
+            } );
+        }
+    });
+
+    // quick search regex
+    var qsRegex;
+    var buttonFilter;
+
+    // init Isotope
+    var $content = $('#portfolio-grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows',
+        /*masonry: {
+            columnWidth: 50
+        },*/
+        filter: function() {
+            var $this = $(this);
+            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+            var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+            return searchResult && buttonResult;
+        }
+    });
+
+    //$content.append( items );
+
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $content.isotope({
+            itemSelector: '.element-item',
+            layoutMode: 'fitRows',
+            filter: function() {
+                var $this = $(this);
+                var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+                var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+                return searchResult && buttonResult;
+            }
+        });
+    }) );
+
+    // filter functions
+    var filterFns = {
+        // show if number is greater than 50
+        numberGreaterThan50: function() {
+            var number = $(this).find('.number').text();
+            return parseInt( number, 10 ) > 50;
+        },
+        // show if name ends with -ium
+        ium: function() {
+            var name = $(this).find('.name').text();
+            return name.match( /ium$/ );
+        }
+    };
+
+    // debounce so filtering doesn't happen every millisecond
+    function debounce( fn, threshold ) {
+        var timeout;
+        return function debounced() {
+            if ( timeout ) {
+                clearTimeout( timeout );
+            }
+            function delayed() {
+                fn();
+                timeout = null;
+            }
+            setTimeout( delayed, threshold || 100 );
+        };
+    }
+
+
+
+    $('.hover').hover(function(){
+        $(this).addClass('flip');
+    },function(){
+        $(this).removeClass('flip');
+    });
+
+</script>
+<script>
+   /* var xmlhttp = new XMLHttpRequest();
+    var url = "data/data.json";
+
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            //myFunction(myArr);
+            var out = "";
+            var i;
+            var type;
+            var category;
+            var name;
+            var example_url;
+            var docs_url;
+
+            for(i = 0; i < arr.length; i++) {
+                if(arr[i].type) type = arr[i].type;
+                if(arr[i].category) category = arr[i].category;
+                if(arr[i].name) name = arr[i].name;
+                if(arr[i].example_url) example_url = arr[i].example_url;
+                if(arr[i].docs_url) docs_url = arr[i].docs_url;
+
+                //out += '<a href="' + example_url + '">' + name + '</a><br>';
+                out += '<div class="element-item list-group-item ' + category + '" data-category="' + category + '">';
+                out += '<h3 class="name">' + name + '</h3>';
+                out += '</div>';
+            }
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(arr) {
+
+        //document.getElementById('portfolio-grid').innerHTML = out;
+    }
+
+
+
+
+
+
+
+
+
+
+    Isotope.Item.prototype._create = function() {
+        // assign id, used for original-order sorting
+        this.id = this.layout.itemGUID++;
+        // transition objects
+        this._transn = {
+            ingProperties: {},
+            clean: {},
+            onEnd: {}
+        };
+        this.sortData = {};
+    };
+
+    Isotope.Item.prototype.layoutPosition = function() {
+        this.emitEvent( 'layout', [ this ] );
+    };
+
+    Isotope.prototype.arrange = function( opts ) {
+        // set any options pass
+        this.option( opts );
+        this._getIsInstant();
+        // just filter
+        this.filteredItems = this._filter( this.items );
+        // flag for initalized
+        this._isLayoutInited = true;
+    };
+
+    // layout mode that does not position items
+    Isotope.LayoutMode.create('none');
+
+
+    // --------------- //
+
+
+    // quick search regex
+    var qsRegex;
+    var buttonFilter;
+
+    // init Isotope
+    var $grid = $('#portfolio-grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'none',
+        filter: function() {
+            var $this = $(this);
+            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+            var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+            return searchResult && buttonResult;
+        }
+    });
+
+    $grid.append( $items );
+
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $grid.isotope({
+            itemSelector: '.element-item',
+            layoutMode: 'none',
+            filter: function() {
+                var $this = $(this);
+                var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+                var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
+                return searchResult && buttonResult;
+            }
+        });
+    }) );
+
+    // filter functions
+    var filterFns = {
+        // show if number is greater than 50
+        numberGreaterThan50: function() {
+            var number = $(this).find('.number').text();
+            return parseInt( number, 10 ) > 50;
+        },
+        // show if name ends with -ium
+        ium: function() {
+            var name = $(this).find('.name').text();
+            return name.match( /ium$/ );
+        }
+    };
+    // bind filter button click
+    $('#filters').on( 'click', 'a', function() {
+        var filterValue = $( this ).attr('data-filter');
+
+        $grid.isotope({ filter: filterValue });
+    });
+    // change is-checked class on buttons
+    $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'a', function() {
+            $buttonGroup.find('.active').removeClass('active');
+            $( this ).addClass('active');
+        });
+    });
+
+
+
+    // debounce so filtering doesn't happen every millisecond
+    function debounce( fn, threshold ) {
+        var timeout;
+        return function debounced() {
+            if ( timeout ) {
+                clearTimeout( timeout );
+            }
+            function delayed() {
+                fn();
+                timeout = null;
+            }
+            setTimeout( delayed, threshold || 100 );
+        };
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+$('.modal').on('show.bs.modal', function (event) {
+	  var button = $(event.relatedTarget) // Button that triggered the modal
+	  var url = button.data('url')
+	  var modal = $(this)
+	  //console.log(url);
+	  $('.modal-content').html('<p data-height="265" data-theme-id="light" data-slug-hash="'+url+'" data-default-tab="html,result" data-user="wptom" data-embed-version="2" class="codepen">'+url+'</p><script async src="//assets.codepen.io\/assets\/embed\/ei.js"><\/script>');
+	});
+
+  </script>
+</body>
+</html>

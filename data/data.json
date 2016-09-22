@@ -1,0 +1,65 @@
+[
+  {
+    "type": "class",
+    "category": "alerts",
+    "name": "alert-success",
+    "example_url": "http://exampleurl.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "alerts",
+    "name": "alert-info",
+    "example_url": "http://exampleurl2.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "alerts",
+    "name": "alert-warning",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-primary",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-secondary",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-success",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-info",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-warning",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-danger",
+    "example_url": "http://exampleurl3.com",
+    "docs_url": "http://docsurl.com"
+  }
+]
