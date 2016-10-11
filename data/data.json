@@ -3,63 +3,140 @@
     "type": "class",
     "category": "alerts",
     "name": "alert-success",
-    "example_url": "http://exampleurl.com",
+    "url": "alert-success",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "alerts",
     "name": "alert-info",
-    "example_url": "http://exampleurl2.com",
+    "url": "alert-info",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "alerts",
     "name": "alert-warning",
-    "example_url": "http://exampleurl3.com",
+    "url": "alert-warning",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "alerts",
+    "name": "alert-danger",
+    "url": "alert-danger",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "buttons",
     "name": "btn-primary",
-    "example_url": "http://exampleurl3.com",
+    "url": "btn-primary",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "buttons",
     "name": "btn-secondary",
-    "example_url": "http://exampleurl3.com",
+    "url": "btn-secondary",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "buttons",
     "name": "btn-success",
-    "example_url": "http://exampleurl3.com",
+    "url": "btn-success",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "buttons",
     "name": "btn-info",
-    "example_url": "http://exampleurl3.com",
+    "url": "btn-info",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "buttons",
     "name": "btn-warning",
-    "example_url": "http://exampleurl3.com",
+    "url": "btn-warning",
     "docs_url": "http://docsurl.com"
   },
   {
     "type": "class",
     "category": "buttons",
     "name": "btn-danger",
-    "example_url": "http://exampleurl3.com",
+    "url": "btn-danger",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-outline",
+    "url": "btn-outline",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-lg",
+    "url": "btn-lg",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-sm",
+    "url": "btn-sm",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "buttons",
+    "name": "btn-block",
+    "url": "btn-block",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "breadcrumb",
+    "name": "breadcrumb",
+    "url": "breadcrumb",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "button-group",
+    "name": "btn-group",
+    "url": "btn-group",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "button-group",
+    "name": "btn-group-sm",
+    "url": "btn-group-sm",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "button-group",
+    "name": "btn-group-lg",
+    "url": "btn-group-lg",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "button-group",
+    "name": "btn-group-vertical",
+    "url": "btn-group-vertical",
+    "docs_url": "http://docsurl.com"
+  },
+  {
+    "type": "class",
+    "category": "card",
+    "name": "card",
+    "url": "card",
     "docs_url": "http://docsurl.com"
   }
 ]

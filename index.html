@@ -11,9 +11,22 @@
     <link rel="stylesheet" href="easy-autocomplete/easy-autocomplete.css">
     <link rel="stylesheet" href="easy-autocomplete/easy-autocomplete.themes.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="prism/prism.css">
+    <script defer src="prism/prism.js"></script>
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
 </head>
 <body>
-
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
     <div class="hidden-sm-down col-md-4 col-lg-4">
         <a class="navbar-brand" href="#">Bootstrap cheatsheet</a>
@@ -33,7 +46,7 @@
         <a href="#"  class="button" data-filter=".alerts">Alerts</a>
         <a href="#"  class="button" data-filter=".breadcrumb">Breadcrumb</a>
         <a href="#"  class="button" data-filter=".buttons">Buttons</a>
-        <a href="#"  class="button" data-filter=".button-groups">Button groups</a>
+        <a href="#"  class="button" data-filter=".button-group">Button group</a>
         <a href="#"  class="button" data-filter=".button-modifiers">Button modifiers</a>
         <a href="#"  class="button" data-filter=".cards">Cards</a>
         <a href="#"  class="button" data-filter=".carousel">Carousel</a>
@@ -65,50 +78,52 @@
 
 <div class="container-fluid no-gutter bsc-content">
 
-
     <div id="portfolio-grid" class="grid list-group">
-        <!--<div class="col-sm-3">
-            <div class="element-item list-group-item alerts" data-category="alerts">
-                <h3 class="name">alert-success</h3>
-            </div>
-            <div class="element-item list-group-item alerts" data-category="alerts">
-                <h3 class="name">alert-info</h3>
-            </div>
-            <div class="element-item list-group-item alerts " data-category="alerts">
-                <h3 class="name">alert-warnings</h3>
-            </div>
-            <div class="element-item list-group-item alerts" data-category="alerts">
-                <h3 class="name">alert-danger</h3>
-            </div>
-        </div>-->
 
     </div>
-
 
 </div><!-- /.container -->
 
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">           
-        </div>		
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
     </div>
 </div>
 
+<script>
+    $('.modal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var url = button.data('url');
+        var modal = $(this);
+        var html_string = '';
+
+        html_string += '<div class="container-fluid">';
+        html_string += '<div class="col-md-6">';
+        html_string += '<div class="modal-content" w3-include-html="html/'+url+'.html"></div><script>w3IncludeHTML();<\/script>';
+        html_string += '</div>';
+        html_string += '<div class="col-md-6">';
+        html_string += '<pre><code class="language-html">';
+        html_string += '<xmp w3-include-html="html/'+url+'.html">';
+        html_string += '</xmp>';
+        html_string += '</code></pre>';
+        html_string += '</div>';
+        html_string += '</div>';
+
+        $('.modal-dialog').html(html_string);
+        $('.modal-content').hide();
+    });
+
+</script>
 
 
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+
 <script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
 <script src="easy-autocomplete/jquery.easy-autocomplete.min.js"></script>
+
+
+
 <script>
-
-
-
-
     var options = {
         url: "data/autocomplete.js",
         list: {
@@ -143,36 +158,24 @@
 
         grabNews();
 
+        var items_json = [];
 
         function showNews(){
             if (!news) return;
             var items = [];
 
+
             for (i = 0; i < news.length; i++) {
                 var item;
                 if (!news[i]) return; // reached the end of the json news
-
-                /*if (news[i].index % 7 == 0) {
-                    item = $('<div class="tile x300x300"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
-                } else if (news[i].index % 5 == 0) {
-                    item = $('<div class="tile x300x200"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
-                } else if (news[i].index % 4 == 0) {
-                    item = $('<div class="tile x200x200"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
-                } else {
-                    item = $('<div class="tile x150x100"><h3>' + news[i].headline + '</h3><br>' + news[i].text + '</div>');
-                }*/
+                items_json.push(news[i]);
 
 
-
-
-                  item = $('<div class="element-item list-group-item ' + news[i].category + '">' +
-                           '<div class="bsc-card">' +
-                           '<div class="face front">' +
+                item = $('<div class="element-item list-group-item ' + news[i].category + '">' +
+                           '<a href="#" class="bsc-card" data-toggle="modal" data-target="#myModal" data-url="' + news[i].url + '">' +
                            '<span class="name">' + news[i].name + '</span>' +
                            '<span class="category">' + news[i].category + '</span>' +
-                           '</div>' +
-                           '<div class="face back"><a href="#one" class="back-link one">one</a><a href="#two" class="back-link two">two</a></div>' +
-                           '</div>' +
+                           '</a>' +
                            '</div>');
 
                 items.push( item.get(0) );
@@ -197,6 +200,12 @@
 
             max += 50;
             min += 50;
+
+
+            for (i = 0; i < news.length; i++) {
+                console.log(items_json[i].name);
+            }
+
         };
 
 
@@ -235,6 +244,8 @@
 
             } );
         }
+
+
     });
 
     // quick search regex
@@ -304,190 +315,11 @@
 
 
 
-    $('.hover').hover(function(){
-        $(this).addClass('flip');
-    },function(){
-        $(this).removeClass('flip');
-    });
+
 
 </script>
 <script>
-   /* var xmlhttp = new XMLHttpRequest();
-    var url = "data/data.json";
 
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var myArr = JSON.parse(this.responseText);
-            //myFunction(myArr);
-            var out = "";
-            var i;
-            var type;
-            var category;
-            var name;
-            var example_url;
-            var docs_url;
-
-            for(i = 0; i < arr.length; i++) {
-                if(arr[i].type) type = arr[i].type;
-                if(arr[i].category) category = arr[i].category;
-                if(arr[i].name) name = arr[i].name;
-                if(arr[i].example_url) example_url = arr[i].example_url;
-                if(arr[i].docs_url) docs_url = arr[i].docs_url;
-
-                //out += '<a href="' + example_url + '">' + name + '</a><br>';
-                out += '<div class="element-item list-group-item ' + category + '" data-category="' + category + '">';
-                out += '<h3 class="name">' + name + '</h3>';
-                out += '</div>';
-            }
-        }
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-
-    function myFunction(arr) {
-
-        //document.getElementById('portfolio-grid').innerHTML = out;
-    }
-
-
-
-
-
-
-
-
-
-
-    Isotope.Item.prototype._create = function() {
-        // assign id, used for original-order sorting
-        this.id = this.layout.itemGUID++;
-        // transition objects
-        this._transn = {
-            ingProperties: {},
-            clean: {},
-            onEnd: {}
-        };
-        this.sortData = {};
-    };
-
-    Isotope.Item.prototype.layoutPosition = function() {
-        this.emitEvent( 'layout', [ this ] );
-    };
-
-    Isotope.prototype.arrange = function( opts ) {
-        // set any options pass
-        this.option( opts );
-        this._getIsInstant();
-        // just filter
-        this.filteredItems = this._filter( this.items );
-        // flag for initalized
-        this._isLayoutInited = true;
-    };
-
-    // layout mode that does not position items
-    Isotope.LayoutMode.create('none');
-
-
-    // --------------- //
-
-
-    // quick search regex
-    var qsRegex;
-    var buttonFilter;
-
-    // init Isotope
-    var $grid = $('#portfolio-grid').isotope({
-        itemSelector: '.element-item',
-        layoutMode: 'none',
-        filter: function() {
-            var $this = $(this);
-            var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-            var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
-            return searchResult && buttonResult;
-        }
-    });
-
-    $grid.append( $items );
-
-    // use value of search field to filter
-    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
-        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-        $grid.isotope({
-            itemSelector: '.element-item',
-            layoutMode: 'none',
-            filter: function() {
-                var $this = $(this);
-                var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-                var buttonResult = buttonFilter ? $this.is( buttonFilter ) : true;
-                return searchResult && buttonResult;
-            }
-        });
-    }) );
-
-    // filter functions
-    var filterFns = {
-        // show if number is greater than 50
-        numberGreaterThan50: function() {
-            var number = $(this).find('.number').text();
-            return parseInt( number, 10 ) > 50;
-        },
-        // show if name ends with -ium
-        ium: function() {
-            var name = $(this).find('.name').text();
-            return name.match( /ium$/ );
-        }
-    };
-    // bind filter button click
-    $('#filters').on( 'click', 'a', function() {
-        var filterValue = $( this ).attr('data-filter');
-
-        $grid.isotope({ filter: filterValue });
-    });
-    // change is-checked class on buttons
-    $('.button-group').each( function( i, buttonGroup ) {
-        var $buttonGroup = $( buttonGroup );
-        $buttonGroup.on( 'click', 'a', function() {
-            $buttonGroup.find('.active').removeClass('active');
-            $( this ).addClass('active');
-        });
-    });
-
-
-
-    // debounce so filtering doesn't happen every millisecond
-    function debounce( fn, threshold ) {
-        var timeout;
-        return function debounced() {
-            if ( timeout ) {
-                clearTimeout( timeout );
-            }
-            function delayed() {
-                fn();
-                timeout = null;
-            }
-            setTimeout( delayed, threshold || 100 );
-        };
-    }*/
-
-
-
-
-
-
-
-
-
-
-
-
-$('.modal').on('show.bs.modal', function (event) {
-	  var button = $(event.relatedTarget) // Button that triggered the modal
-	  var url = button.data('url')
-	  var modal = $(this)
-	  //console.log(url);
-	  $('.modal-content').html('<p data-height="265" data-theme-id="light" data-slug-hash="'+url+'" data-default-tab="html,result" data-user="wptom" data-embed-version="2" class="codepen">'+url+'</p><script async src="//assets.codepen.io\/assets\/embed\/ei.js"><\/script>');
-	});
-
-  </script>
+</script>
 </body>
 </html>
